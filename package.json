@@ -1,0 +1,29 @@
+{
+	"name": "@jaezmien/hts",
+	"version": "1.0.0",
+	"type": "module",
+	"author": "Jaezmien Naejara",
+	"license": "MIT",
+	"source": "src/index.ts",
+	"exports": {
+		"require": "./dist/index.cjs",
+		"default": "./dist/index.modern.js"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.module.js",
+	"unpkg": "./dist/index.umd.js",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^6.19.1",
+		"@typescript-eslint/parser": "^6.19.1",
+		"eslint": "^8.56.0",
+		"microbundle": "^0.15.1",
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3"
+	},
+	"scripts": {
+		"build": "microbundle --sourcemap false",
+		"dev": "microbundle watch",
+		"lint": "eslint --cache --ext .ts . && prettier -c src",
+		"lint:fix": "eslint --cache --ext .ts . --fix && prettier -c src -w"
+	}
+}
